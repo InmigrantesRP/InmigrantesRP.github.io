@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmigrantes RP - Servidor de Roleplay</title>
+    <meta name="description"
+        content="Inmigrantes RP es un servidor de roleplay en FiveM. Conoce nuestras normativas, Ãºnete a nuestro Discord y comienza tu aventura.">
+    <meta name="theme-color" content="#060b18">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Navigation Toggle (top-left) -->
+    <nav class="nav-toggle" id="navToggle">
+        <button class="nav-btn active" data-section="inicio" id="nav-inicio-btn" onclick="switchSection('inicio')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            <span>Inicio</span>
+        </button>
+        <button class="nav-btn" data-section="normativa" id="nav-normativa-btn" onclick="switchSection('normativa')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            <span>Normativa</span>
+        </button>
+        <button class="nav-btn" data-section="tienda" id="nav-tienda-btn" onclick="switchSection('tienda')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            <span>Tienda</span>
+        </button>
+    </nav>
+
+    <!-- ==================== SECTION: INICIO ==================== -->
+    <section class="page-section active" id="section-inicio">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="logo-container">
+                    <div class="logo-glow"></div>
+                    <img src="logo.png" alt="Inmigrantes RP Logo" class="logo">
+                </div>
+                <h1 class="server-name">INMIGRANTES RP</h1>
+                <p class="server-tagline">Roleplay Inmersivo</p>
+
+                <div class="buttons-container">
+                    <a href="https://discord.gg/WBun2r9PXv" target="_blank" class="btn btn-discord" id="discord-btn">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" />
+                        </svg>
+                        Unete al Discord
+                    </a>
+                    <a href="fivem://connect/cfx.re/join/6gmal4" class="btn btn-fivem" id="fivem-btn">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2 4l2 16h5l-1-8 4 8h5l2-16h-5l-1 8-4-8H2z" />
+                        </svg>
+                        Conectar a FiveM
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <footer class="footer" id="footer-inicio">
+            <p>&copy; 2026 <a href="#">Inmigrantes RP</a> Todos los derechos reservados.</p>
+        </footer>
+    </section>
+
+    <!-- ==================== SECTION: NORMATIVA ==================== -->
+    <section class="page-section" id="section-normativa">
+        <div class="normativa-section">
+            <div class="section-header" style="margin-top: 0;">
+                <div class="section-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    Reglas del Servidor
+                </div>
+                <h2 class="section-title">Normativa General</h2>
+                <p class="section-subtitle">Si deseas pertenecer a nuestra hermosa comunidad es importante que leas todo
+                    lo
+                    indicado
+                    en estas normas para tener una experiencia positiva.
+                </p>
+                <p class="section-subtitle">
+                    Recordemos que debemos darle vida y personalidad a tu personaje, este debe actuar y pensar
+                    como si fuese en la vida real.
+                </p>
+            </div>
+            <div class="norma-grid">
+                <div class="norma-card" onclick="openNormaModal('general_1')">
+                    <span class="norma-card-number">01</span>
+                    <span class="norma-card-title">Creación del Personaje</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('general_2')">
+                    <span class="norma-card-number">02</span>
+                    <span class="norma-card-title">Tips del Inicio del Personaje</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('general_3')">
+                    <span class="norma-card-number">03</span>
+                    <span class="norma-card-title">Importante</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('general_4')">
+                    <span class="norma-card-number">04</span>
+                    <span class="norma-card-title">Conceptos Básicos</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('general_5')">
+                    <span class="norma-card-number">05</span>
+                    <span class="norma-card-title">Prohibido</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('general_6')">
+                    <span class="norma-card-number">06</span>
+                    <span class="norma-card-title">Interacción con Policía</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('general_7')">
+                    <span class="norma-card-number">07</span>
+                    <span class="norma-card-title">Interacción con EMS</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('general_8')">
+                    <span class="norma-card-number">08</span>
+                    <span class="norma-card-title">Interacción con Staff</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('general_9')">
+                    <span class="norma-card-number">09</span>
+                    <span class="norma-card-title">Condiciones de Reporte</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('general_10')">
+                    <span class="norma-card-number">10</span>
+                    <span class="norma-card-title">Pedir Perspectivas</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('general_11')">
+                    <span class="norma-card-number">11</span>
+                    <span class="norma-card-title">Uso de Mods</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('general_12')">
+                    <span class="norma-card-number">12</span>
+                    <span class="norma-card-title">Donaciones</span>
+                </div>
+            </div>
+            <div class="section-header" style="margin-top: 60px;">
+                <h2 class="section-title">Normativa Delictivas</h2>
+                <p class="section-subtitle">Lee atentamente cada sección antes de iniciar tu experiencia de roleplay.
+                </p>
+            </div>
+            <div class="norma-grid">
+                <div class="norma-card" onclick="openNormaModal('delictivas_1')">
+                    <span class="norma-card-number">01</span>
+                    <span class="norma-card-title">Regla 1</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('delictivas_2')">
+                    <span class="norma-card-number">02</span>
+                    <span class="norma-card-title">Regla 2</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('delictivas_3')">
+                    <span class="norma-card-number">03</span>
+                    <span class="norma-card-title">Regla 3</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('delictivas_4')">
+                    <span class="norma-card-number">04</span>
+                    <span class="norma-card-title">Regla 4</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('delictivas_5')">
+                    <span class="norma-card-number">05</span>
+                    <span class="norma-card-title">Regla 5</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('delictivas_6')">
+                    <span class="norma-card-number">06</span>
+                    <span class="norma-card-title">Regla 6</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('delictivas_7')">
+                    <span class="norma-card-number">07</span>
+                    <span class="norma-card-title">Regla 7</span>
+                </div>
+            </div>
+            <div class="section-header" style="margin-top: 60px;">
+                <h2 class="section-title">Normativa Policial</h2>
+                <p class="section-subtitle">Lee atentamente cada sección antes de iniciar tu experiencia de roleplay.
+                </p>
+            </div>
+            <div class="norma-grid">
+                <div class="norma-card" onclick="openNormaModal('policial_1')">
+                    <span class="norma-card-number">01</span>
+                    <span class="norma-card-title">Regla 1</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('policial_2')">
+                    <span class="norma-card-number">02</span>
+                    <span class="norma-card-title">Regla 2</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('policial_3')">
+                    <span class="norma-card-number">03</span>
+                    <span class="norma-card-title">Regla 3</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('policial_4')">
+                    <span class="norma-card-number">04</span>
+                    <span class="norma-card-title">Regla 4</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('policial_5')">
+                    <span class="norma-card-number">05</span>
+                    <span class="norma-card-title">Regla 5</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('policial_6')">
+                    <span class="norma-card-number">06</span>
+                    <span class="norma-card-title">Regla 6</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('policial_7')">
+                    <span class="norma-card-number">07</span>
+                    <span class="norma-card-title">Regla 7</span>
+                </div>
+            </div>
+            <div class="section-header" style="margin-top: 60px;">
+                <h2 class="section-title">Normativa Ems</h2>
+                <p class="section-subtitle">Si estas interesado en pertenecer a la facción, más importante de la ciudad
+                    es necesario leas todo lo mencionado para tener
+                    experiencia positiva.
+                </p>
+            </div>
+            <div class="norma-grid">
+                <div class="norma-card" onclick="openNormaModal('ems_1')">
+                    <span class="norma-card-number">01</span>
+                    <span class="norma-card-title">Jerarquia</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('ems_2')">
+                    <span class="norma-card-number">02</span>
+                    <span class="norma-card-title">Ascensos</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('ems_3')">
+                    <span class="norma-card-number">03</span>
+                    <span class="norma-card-title">Uniforme</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('ems_4')">
+                    <span class="norma-card-number">04</span>
+                    <span class="norma-card-title">Ingreso a Servicio</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('ems_5')">
+                    <span class="norma-card-number">05</span>
+                    <span class="norma-card-title">Consideraciones en Servicio</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('ems_6')">
+                    <span class="norma-card-number">06</span>
+                    <span class="norma-card-title">Atenciones</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('ems_7')">
+                    <span class="norma-card-number">07</span>
+                    <span class="norma-card-title">Consideraciones Fuera de Servicio</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('ems_8')">
+                    <span class="norma-card-number">08</span>
+                    <span class="norma-card-title">Importante</span>
+                </div>
+            </div>
+            <div class="section-header" style="margin-top: 60px;">
+                <h2 class="section-title">Normativa Negocios</h2>
+                <p class="section-subtitle">Para entrar a la facción deberás leerte las normativas generales de
+                    inmigrante RP V2 - Tener Como minimo 16 años de Edad ic
+                </p>
+            </div>
+            <div class="norma-grid">
+                <div class="norma-card" onclick="openNormaModal('negocios_1')">
+                    <span class="norma-card-number">01</span>
+                    <span class="norma-card-title">INGRESO Y SERVICIO</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('negocios_2')">
+                    <span class="norma-card-number">02</span>
+                    <span class="norma-card-title">PRECIOS Y COBROS</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('negocios_3')">
+                    <span class="norma-card-number">03</span>
+                    <span class="norma-card-title">VEHICULOS E IMPLEMENTOS</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('negocios_4')">
+                    <span class="norma-card-number">04</span>
+                    <span class="norma-card-title">COMPORTAMIENTO CIVIL</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('negocios_5')">
+                    <span class="norma-card-number">05</span>
+                    <span class="norma-card-title">ACTOS ILICITOS Y ARMAS</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('negocios_6')">
+                    <span class="norma-card-number">06</span>
+                    <span class="norma-card-title">GESTION DE DUEÑOS</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('negocios_7')">
+                    <span class="norma-card-number">07</span>
+                    <span class="norma-card-title">IMPORTANTE</span>
+                </div>
+            </div>
+            <div class="section-header" style="margin-top: 60px;">
+                <h2 class="section-title">Normativa Mecanicos</h2>
+                <p class="section-subtitle">Para entrar a la facción deberás leerte las normativas generales de
+                    inmigrante RP V2 - Tener como mínimo 16 años de edad ic
+                </p>
+            </div>
+            <div class="norma-grid">
+                <div class="norma-card" onclick="openNormaModal('mecanicos_1')">
+                    <span class="norma-card-number">01</span>
+                    <span class="norma-card-title">INGRESOS Y SERVICIOS</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('mecanicos_2')">
+                    <span class="norma-card-number">02</span>
+                    <span class="norma-card-title">PRECIOS Y COBROS</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('mecanicos_3')">
+                    <span class="norma-card-number">03</span>
+                    <span class="norma-card-title">VEHICULOS E IMPLEMENTOS</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('mecanicos_4')">
+                    <span class="norma-card-number">04</span>
+                    <span class="norma-card-title">COMPORTAMIENTO CIVIL</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('mecanicos_5')">
+                    <span class="norma-card-number">05</span>
+                    <span class="norma-card-title">ACTOS ILICITOS Y ARMAS</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('mecanicos_6')">
+                    <span class="norma-card-number">06</span>
+                    <span class="norma-card-title">GESTION DE DUEÑOS</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('mecanicos_7')">
+                    <span class="norma-card-number">07</span>
+                    <span class="norma-card-title">IMPORTANTE</span>
+                </div>
+            </div>
+            <div class="section-header" style="margin-top: 60px;">
+                <h2 class="section-title">Normativa Streamers</h2>
+                <p class="section-subtitle">Lee atentamente cada sección antes de iniciar tu experiencia de roleplay.
+                </p>
+            </div>
+            <div class="norma-grid">
+                <div class="norma-card" onclick="openNormaModal('streamers_1')">
+                    <span class="norma-card-number">01</span>
+                    <span class="norma-card-title">Regla 1</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('streamers_2')">
+                    <span class="norma-card-number">02</span>
+                    <span class="norma-card-title">Regla 2</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('streamers_3')">
+                    <span class="norma-card-number">03</span>
+                    <span class="norma-card-title">Regla 3</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('streamers_4')">
+                    <span class="norma-card-number">04</span>
+                    <span class="norma-card-title">Regla 4</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('streamers_5')">
+                    <span class="norma-card-number">05</span>
+                    <span class="norma-card-title">Regla 5</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('streamers_6')">
+                    <span class="norma-card-number">06</span>
+                    <span class="norma-card-title">Regla 6</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('streamers_7')">
+                    <span class="norma-card-number">07</span>
+                    <span class="norma-card-title">Regla 7</span>
+                </div>
+            </div>
+            <div class="section-header" style="margin-top: 60px;">
+                <h2 class="section-title">Normativa Abogados</h2>
+                <p class="section-subtitle">Lee atentamente cada sección antes de iniciar tu experiencia de roleplay.
+                </p>
+            </div>
+            <div class="norma-grid">
+                <div class="norma-card" onclick="openNormaModal('abogados_1')">
+                    <span class="norma-card-number">01</span>
+                    <span class="norma-card-title">Regla 1</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('abogados_2')">
+                    <span class="norma-card-number">02</span>
+                    <span class="norma-card-title">Regla 2</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('abogados_3')">
+                    <span class="norma-card-number">03</span>
+                    <span class="norma-card-title">Regla 3</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('abogados_4')">
+                    <span class="norma-card-number">04</span>
+                    <span class="norma-card-title">Regla 4</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('abogados_5')">
+                    <span class="norma-card-number">05</span>
+                    <span class="norma-card-title">Regla 5</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('abogados_6')">
+                    <span class="norma-card-number">06</span>
+                    <span class="norma-card-title">Regla 6</span>
+                </div>
+                <div class="norma-card" onclick="openNormaModal('abogados_7')">
+                    <span class="norma-card-number">07</span>
+                    <span class="norma-card-title">Regla 7</span>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <footer class="footer" id="footer">
+            <p>&copy; 2026 <a href="#">Inmigrantes RP</a> Todos los derechos reservados.</p>
+        </footer>
+    </section>
+
+    <!-- ==================== SECTION: TIENDA ==================== -->
+    <section class="page-section" id="section-tienda">
+        <div class="tienda-section">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    TIENDA VIP
+                </div>
+                <h2 class="section-title">Paquetes de Donación</h2>
+                <p class="section-subtitle">Apoya al servidor y obtén beneficios exclusivos. Selecciona un paquete para
+                    ver los detalles.</p>
+            </div>
+
+            <!-- === PAQUETES === -->
+            <div class="tienda-paquetes">
+                <div class="paquete-card paquete-plata" onclick="openTiendaModal('paquete_plata')">
+                    <div class="paquete-shine"></div>
+                    <div class="paquete-icon">
+                        <img src="img/paquete_plata.png" alt="Paquete Plata"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    </div>
+                    <h3 class="paquete-nombre">PLATA</h3>
+                    <p class="paquete-precio">Desde <strong>$5 USD</strong></p>
+                    <span class="paquete-btn">Ver Detalles</span>
+                </div>
+                <div class="paquete-card paquete-oro" onclick="openTiendaModal('paquete_oro')">
+                    <div class="paquete-shine"></div>
+                    <div class="paquete-badge-popular">POPULAR</div>
+                    <div class="paquete-icon">
+                        <img src="img/paquete_oro.png" alt="Paquete Oro"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    </div>
+                    <h3 class="paquete-nombre">ORO</h3>
+                    <p class="paquete-precio">Desde <strong>$15 USD</strong></p>
+                    <span class="paquete-btn">Ver Detalles</span>
+                </div>
+                <div class="paquete-card paquete-diamante" onclick="openTiendaModal('paquete_diamante')">
+                    <div class="paquete-shine"></div>
+                    <div class="paquete-icon">
+                        <img src="img/paquete_diamante.png" alt="Paquete Diamante"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    </div>
+                    <h3 class="paquete-nombre">DIAMANTE</h3>
+                    <p class="paquete-precio">Desde <strong>$30 USD</strong></p>
+                    <span class="paquete-btn">Ver Detalles</span>
+                </div>
+            </div>
+
+            <!-- === ARTICULOS INDIVIDUALES === -->
+            <div class="section-header" style="margin-top: 80px;">
+                <h2 class="section-title">Articulos Individuales</h2>
+                <p class="section-subtitle">Explora nuestros articulos disponibles. Haz clic en cualquiera para ver mas
+                    detalles.</p>
+            </div>
+            <div class="tienda-items-grid" id="tiendaItemsGrid">
+                <!-- Items injected by JS from tiendaItems array -->
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2026 <a href="#">Inmigrantes RP</a> Todos los derechos reservados.</p>
+        </footer>
+    </section>
+
+    <!-- NORMA MODAL -->
+    <div class="norma-modal-overlay" id="normaModalOverlay" onclick="closeNormaModal(event)">
+        <div class="norma-modal" id="normaModal">
+            <button class="norma-modal-close" id="normaModalClose" onclick="closeNormaModal(event, true)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="norma-modal-header">
+                <span class="norma-modal-number" id="normaModalNumber">01</span>
+                <h3 class="norma-modal-title" id="normaModalTitle">Titulo</h3>
+            </div>
+            <div class="norma-modal-body" id="normaModalBody">
+            </div>
+        </div>
+    </div>
+
+    <!-- TIENDA MODAL -->
+    <div class="tienda-modal-overlay" id="tiendaModalOverlay" onclick="closeTiendaModal(event)">
+        <div class="tienda-modal" id="tiendaModal">
+            <button class="norma-modal-close" onclick="closeTiendaModal(event, true)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="tienda-modal-content" id="tiendaModalContent">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
