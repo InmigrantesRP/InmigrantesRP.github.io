@@ -121,8 +121,6 @@ vía ticket, de no hacerlo a tiempo quedarás baneado de forma permanente.</li>
 ser de mala procedencia (por uso de hacks) y se te podría dar ban permanente o CK. 
 Si se te ¨perdona¨ se te hará wipe total y perderás todo incluyendo lo premium que 
 tengas.</li>
-      <li>En caso no hayas entrado a la ciudad en todo el 2025 tu personaje junto a sus cosas 
-ha sido eliminadas sin derecho a retorno.</li>
     </ul>`
   },
   'general_4': {
